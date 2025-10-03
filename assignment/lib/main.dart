@@ -31,7 +31,7 @@ class _MainState extends State<Main> {
       initialRoute: loggedIn ? '/' : '/login',
       routes: {
         '/': (context) => const HomePage(),
-        '/tujuan': (context) => const TujuanPage(),
+        '/tujuan': (context) => const Player(),
         '/login': (context) => const LoginPage(),
       },
     );

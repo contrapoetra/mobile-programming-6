@@ -19,7 +19,12 @@ class LoginPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Icon(Icons.lock, size: 80),
+                const Column(
+                  children: [
+                    Text("Login", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                    Text("jukebox.contrapoetra.com", style: TextStyle(fontSize: 16)),
+                  ],
+                ),
                 const SizedBox(height: 30),
                 TextField(
                   controller: emailController,

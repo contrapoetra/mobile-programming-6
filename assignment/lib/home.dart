@@ -7,7 +7,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Music Catalog', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+        title: Text(
+          'Music Catalog',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: Center(
@@ -16,30 +19,41 @@ class HomePage extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.all(16),
-              child: Card(
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+              child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, '/tujuan');
+                },
+                child: Card(
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    child: Row(
+                      children: [
+                        Icon(Icons.album, size: 100),
+                        SizedBox(width: 16),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Echo of My Shadow',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text('AURORA', style: TextStyle(fontSize: 16)),
+                          ],
+                        ),
+                        Spacer(),
+                        Icon(Icons.favorite),
+                        SizedBox(width: 16),
+                      ],
+                    ),
+                  ),
                 ),
-                child: Container(
-                  padding: EdgeInsets.all(16),
-                  child: Row(
-                    children: [
-                      Icon(Icons.album, size: 100),
-                      SizedBox(width: 16),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Echo of My Shadow', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                          Text('AURORA', style: TextStyle(fontSize: 16)),
-                        ],
-                      ),
-                      Spacer(),
-                      Icon(Icons.favorite),
-                      SizedBox(width: 16),
-                    ],
-                  )
-                )
               ),
             ),
           ],
